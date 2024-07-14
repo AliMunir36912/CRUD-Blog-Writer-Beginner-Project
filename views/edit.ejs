@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+</head>
+<body>
+    <h1>Edit Page</h1>
+    <form action="/?_method=PATCH" method="POST">
+        <textarea name="updateDescription" id="" cols="50" rows="15">
+            <%= description %>
+        </textarea>
+        <input type="hidden" name="title" value="<%= title %>" id="">
+        <input type="hidden" name="id" value="<%= id %>">
+        <button>Update Post</button>
+    </form>
+    
+</body>
+</html>

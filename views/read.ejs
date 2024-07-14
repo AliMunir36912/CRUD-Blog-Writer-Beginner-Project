@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+</head>
+<body>
+    <h1>Blog Page</h1>
+    <form action="/create" method="get">
+        <button type="submit">Add New Blog</button>
+    </form>
+    <% for (blog of allBlogs) { %>
+        <% if (blog.title && blog.description) { %>
+        <h3><%= blog.title %></h3>
+        <p><%= blog.description %></p>
+        <form action="/edit/<%= blog._id %>?_method=EDIT" method="POST">
+            <input type="hidden" name="description" value="<%= blog.description %>" id="">
+            <input type="hidden" name="title" value="<%= blog.title %>" id="">
+            <button><h5>Edit Blog</h5></button>
+        </form>
+        <form action="/?_method=DELETE" method="post">
+            <input type="hidden" name="_id" value="<%= blog._id %>">
+            <button><h5>Delete Blog</h5></button></h5>
+        </form>
+        <% } %>
+    <% } %>
+     
+</body>
+</html>
